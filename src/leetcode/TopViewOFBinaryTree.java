@@ -3,20 +3,12 @@ package leetcode;
 import java.util.Scanner;
 
 public class TopViewOFBinaryTree {
-	class Node {
-	    Node left;
-	    Node right;
-	    int data;
-	    
-	    Node(int data) {
-	        this.data = data;
-	        left = null;
-	        right = null;
-	    }
-	}
-	public static Node insert(Node root, int data) {
+
+	 static Node insert(Node root, int data) {
+//         leetcode.TopViewOFBinaryTree.this
         if(root == null) {
-            return new Node(data);
+            Node node = new Node(data);
+            return node;
         } else {
             Node cur;
             if(data <= root.data) {
@@ -29,9 +21,10 @@ public class TopViewOFBinaryTree {
             return root;
         }
     }
-	
-	public static void topView(Node root) {
-           	
+//	static int c;
+	public  void topView(Node root) {
+           insert(null, root.data);
+
     }
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -42,7 +35,7 @@ public class TopViewOFBinaryTree {
             root = insert(root, data);
         }
         scan.close();
-        topView(root);
+//        topView(root);
     }	
 }
-}
+
